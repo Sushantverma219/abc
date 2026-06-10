@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sarkari & Private Job Desk | RozgarInfo</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+        body { 
+
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+
+            background-color: #f8fafc;
+
+        }
+
+        .premium-card {
+
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+        }
+
+        .premium-card:hover {
+
+            transform: translateY(-4px);
+
+            box-shadow: 0 12px 30px -10px rgba(79, 70, 229, 0.12);
+
+        }
+
+    </style>
+
+</head>
+
+<body class="text-slate-900 min-h-screen flex flex-col antialiased">
+
+
+
+    <div class="bg-gradient-to-r from-amber-500 to-orange-600 text-white text-xs font-bold py-2.5 px-4 text-center tracking-wide shadow-sm flex items-center justify-center gap-2">
+
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+
+        100% PURE INFORMATION DESK: No Paid Courses. No Form Fees. All Official Links Clickable.
+
+    </div>
+
+
+
+    <nav class="bg-white/80 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-50 shadow-sm">
+
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+
+            <div class="flex items-center gap-3">
+
+                <div class="h-10 w-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-md shadow-indigo-200">
+
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+
+                </div>
+
+                <span class="text-2xl font-black tracking-tight text-slate-900">Rozgar<span class="text-indigo-600">Info</span></span>
+
+            </div>
+
+            <div class="hidden md:flex items-center gap-8 text-sm font-bold text-slate-600">
+
+                <span class="text-indigo-600 border-b-2 border-indigo-600 pb-1 cursor-pointer">Live Board</span>
+
+                <span class="hover:text-indigo-600 transition cursor-pointer" onclick="filterSector('Government')">Government</span>
+
+                <span class="hover:text-indigo-600 transition cursor-pointer" onclick="filterSector('MCD')">MCD Desk</span>
+
+                <span class="hover:text-indigo-600 transition cursor-pointer" onclick="filterSector('Private')">Private Tech</span>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <header class="relative overflow-hidden bg-white border-b border-slate-200/60 py-20 px-6">
+
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-indigo-100/40 rounded-full filter blur-3xl -z-10"></div>
+
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-100/30 rounded-full filter blur-3xl -z-10"></div>
+
+
+
+        <div class="max-w-4xl mx-auto text-center relative">
+
+            <span class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 mb-4 border border-indigo-100 animate-pulse">
+
+                ✨ Live Updates Active
+
+            </span>
+
+            <h1 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-4">
+
+                Centralized Job Qualifications <br/>& <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">Official Notices</span>
+
+            </h1>
+
+            <p class="text-base md:text-lg text-slate-500 mb-8 max-w-2xl mx-auto font-medium">
+
+                Sarkari Vibhag, Municipal Corporations (MCD), and verified Private listings. Click any official source button to visit their verified website directly.
+
+            </p>
+
+            
+
+            <div class="bg-white p-3 rounded-2xl shadow-xl shadow-slate-200/80 border border-slate-200 max-w-xl mx-auto flex items-center gap-3 group focus-within:border-indigo-500 transition-all">
+
+                <div class="flex-grow pl-3 flex items-center gap-3">
+
+                    <svg class="text-slate-400 group-focus-within:text-indigo-500 w-5 h-5 flex-shrink-0 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+
+                    <input type="text" id="jobSearch" onkeyup="searchJobs()" placeholder="Search by post name, eligibility, degree or corporation..." class="w-full text-sm font-medium text-slate-800 focus:outline-none bg-transparent placeholder-slate-400">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <main class="max-w-6xl mx-auto px-6 py-12 flex-grow w-full">
+
+        
+
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-10 border-b border-slate-200/80 pb-6">
+
+            <div class="flex flex-wrap gap-2.5 bg-slate-100 p-1.5 rounded-xl">
+
+                <button onclick="filterSector('All')" class="sector-tab px-5 py-2.5 text-xs font-extrabold rounded-lg bg-white text-indigo-600 shadow-sm transition-all duration-200">All Sectors</button>
+
+                <button onclick="filterSector('Government')" class="sector-tab px-5 py-2.5 text-xs font-extrabold rounded-lg text-slate-600 hover:text-slate-900 transition-all duration-200">Government</button>
+
+                <button onclick="filterSector('MCD')" class="sector-tab px-5 py-2.5 text-xs font-extrabold rounded-lg text-slate-600 hover:text-slate-900 transition-all duration-200">MCD Desk</button>
+
+                <button onclick="filterSector('Private')" class="sector-tab px-5 py-2.5 text-xs font-extrabold rounded-lg text-slate-600 hover:text-slate-900 transition-all duration-200">Private Jobs</button>
+
+            </div>
+
+            <div class="text-xs font-bold text-slate-400 bg-slate-100 px-3 py-1.5 rounded-md" id="counterBox">
+
+                Showing all notifications
+
+            </div>
+
+        </div>
+
+
+
+        <div id="infoGrid" class="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+
+            </div>
+
+    </main>
+
+
+
+    <footer class="bg-white border-t border-slate-200/80 py-8 text-center text-xs font-medium text-slate-400">
+
+        <div class="max-w-6xl mx-auto px-6 space-y-2">
+
+            <div>&copy; 2026 RozgarInfo Desk. Verified Public Portal Notification Engine.</div>
+
+        </div>
+
+    </footer>
+
+
+
+    <script>
+
+        // Real Government, MCD and Tech domains attached
+
+        const informationalDatabase = [
+
+            {
+
+                id: 1,
+
+                postName: "Assistant Engineer (Civil)",
+
+                department: "Municipal Corporation of Delhi (MCD)",
+
+                sector: "MCD",
+
+                qualification: "Degree in Civil Engineering (B.E / B.Tech)",
+
+                ageLimit: "18 - 30 Years (Age relaxation as per center norms)",
+
+                totalPosts: "42 Total Vacancies",
+
+                importantDates: "Advt Ref No: MCD/2026/08",
+
+                selectionProcess: "Computer Based Test (CBT) + Documents Review",
+
+                officialUrl: "https://mcdonline.nic.in"
+
+            ,
+                expectedSalary: "₹44,900 - ₹1,42,400/month"
+            },
+
+            {
+
+                id: 2,
+
+                postName: "Staff Nurse (Grade-A)",
+
+                department: "Central Govt Hospitals & CGHS Units",
+
+                sector: "Government",
+
+                qualification: "B.Sc (Honours) Nursing OR GNM Diploma with 2 Years Exp",
+
+                ageLimit: "Maximum 35 Years",
+
+                totalPosts: "185 Seat Matrix Open",
+
+                importantDates: "Notification Status: Active Verification",
+
+                selectionProcess: "National Level Competitive Written Test",
+
+                officialUrl: "https://ssc.gov.in"
+
+            ,
+                expectedSalary: "₹44,900 - ₹1,42,400/month"
+            },
+
+            {
+
+                id: 3,
+
+                postName: "Software Engineer (Full Stack Dev)",
+
+                department: "Enterprise Tech Systems",
+
+                sector: "Private",
+
+                qualification: "B.Tech / MCA / BCA (Solid proficiency in modern JS stacks)",
+
+                ageLimit: "Open Requirement / Merit Driven",
+
+                totalPosts: "Multiple Active Inflow",
+
+                importantDates: "Direct Corporate Drive",
+
+                selectionProcess: "System Logic Design Round & Tech HR Interview",
+
+                officialUrl: "https://www.ncs.gov.in"
+
+            ,
+                expectedSalary: "₹6 - ₹12 LPA"
+            },
+
+            {
+
+                id: 4,
+
+                postName: "Data Entry Operator (DEO)",
+
+                department: "State Department of Consumer Affairs",
+
+                sector: "Government",
+
+                qualification: "12th Class Passed + English typing minimum speed 35 wpm",
+
+                ageLimit: "18 - 27 Years",
+
+                totalPosts: "60 Allocation Units",
+
+                importantDates: "Check Weekly Employment News Slate",
+
+                selectionProcess: "Speed & Accuracy Typing Skill Test Only",
+
+                officialUrl: "https://delhi.gov.in"
+
+            ,
+                expectedSalary: "₹25,500 - ₹81,100/month"
+            },
+
+            {
+
+                id: 5,
+
+                postName: "Junior Architect & Designer",
+
+                department: "Delhi Development Authority (DDA)",
+
+                sector: "Government",
+
+                qualification: "Bachelor's Degree in Architecture (B.Arch) + Council Reg.",
+
+                ageLimit: "21 - 32 Years",
+
+                totalPosts: "15 Vacancies allocated",
+
+                importantDates: "Public Gazette Notice No. 104/A",
+
+                selectionProcess: "Evaluation Matrix + Direct Shortlist Panel Interview",
+
+                officialUrl: "https://dda.gov.in"
+
+            ,
+                expectedSalary: "₹56,100 - ₹1,77,500/month"
+            },
+{
+                id: 100,
+                postName: "Junior Engineer",
+                department: "Government Department 100",
+                sector: "Government",
+                qualification: "Graduate / Diploma relevant to post",
+                ageLimit: "18 - 31 Years",
+                totalPosts: "40 Vacancies",
+                importantDates: "Notification Active",
+                selectionProcess: "Written Exam + Document Verification",
+                officialUrl: "https://ssc.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 101,
+                postName: "LDC",
+                department: "Government Department 101",
+                sector: "Government",
+                qualification: "Graduate / Diploma relevant to post",
+                ageLimit: "18 - 32 Years",
+                totalPosts: "41 Vacancies",
+                importantDates: "Notification Active",
+                selectionProcess: "Written Exam + Document Verification",
+                officialUrl: "https://ssc.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 102,
+                postName: "UDC",
+                department: "Government Department 102",
+                sector: "Government",
+                qualification: "Graduate / Diploma relevant to post",
+                ageLimit: "18 - 33 Years",
+                totalPosts: "42 Vacancies",
+                importantDates: "Notification Active",
+                selectionProcess: "Written Exam + Document Verification",
+                officialUrl: "https://ssc.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 103,
+                postName: "MTS",
+                department: "Government Department 103",
+                sector: "Government",
+                qualification: "Graduate / Diploma relevant to post",
+                ageLimit: "18 - 34 Years",
+                totalPosts: "43 Vacancies",
+                importantDates: "Notification Active",
+                selectionProcess: "Written Exam + Document Verification",
+                officialUrl: "https://ssc.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 104,
+                postName: "Tax Assistant",
+                department: "Government Department 104",
+                sector: "Government",
+                qualification: "Graduate / Diploma relevant to post",
+                ageLimit: "18 - 27 Years",
+                totalPosts: "44 Vacancies",
+                importantDates: "Notification Active",
+                selectionProcess: "Written Exam + Document Verification",
+                officialUrl: "https://ssc.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 105,
+                postName: "Auditor",
+                department: "Government Department 105",
+                sector: "Government",
+                qualification: "Graduate / Diploma relevant to post",
+                ageLimit: "18 - 28 Years",
+                totalPosts: "45 Vacancies",
+                importantDates: "Notification Active",
+                selectionProcess: "Written Exam + Document Verification",
+                officialUrl: "https://ssc.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 106,
+                postName: "Constable",
+                department: "Government Department 106",
+                sector: "Government",
+                qualification: "Graduate / Diploma relevant to post",
+                ageLimit: "18 - 29 Years",
+                totalPosts: "46 Vacancies",
+                importantDates: "Notification Active",
+                selectionProcess: "Written Exam + Document Verification",
+                officialUrl: "https://ssc.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 107,
+                postName: "Sub Inspector",
+                department: "Government Department 107",
+                sector: "Government",
+                qualification: "Graduate / Diploma relevant to post",
+                ageLimit: "18 - 30 Years",
+                totalPosts: "47 Vacancies",
+                importantDates: "Notification Active",
+                selectionProcess: "Written Exam + Document Verification",
+                officialUrl: "https://ssc.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 108,
+                postName: "Technician",
+                department: "Government Department 108",
+                sector: "Government",
+                qualification: "Graduate / Diploma relevant to post",
+                ageLimit: "18 - 31 Years",
+                totalPosts: "48 Vacancies",
+                importantDates: "Notification Active",
+                selectionProcess: "Written Exam + Document Verification",
+                officialUrl: "https://ssc.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 109,
+                postName: "Staff Nurse",
+                department: "Government Department 109",
+                sector: "Government",
+                qualification: "Graduate / Diploma relevant to post",
+                ageLimit: "18 - 32 Years",
+                totalPosts: "49 Vacancies",
+                importantDates: "Notification Active",
+                selectionProcess: "Written Exam + Document Verification",
+                officialUrl: "https://ssc.gov.in"
+            ,
+                expectedSalary: "₹44,900 - ₹1,42,400/month"
+            },
+{
+                id: 110,
+                postName: "Scientific Assistant",
+                department: "Government Department 110",
+                sector: "Government",
+                qualification: "Graduate / Diploma relevant to post",
+                ageLimit: "18 - 33 Years",
+                totalPosts: "50 Vacancies",
+                importantDates: "Notification Active",
+                selectionProcess: "Written Exam + Document Verification",
+                officialUrl: "https://ssc.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 111,
+                postName: "Postal Assistant",
+                department: "Government Department 111",
+                sector: "Government",
+                qualification: "Graduate / Diploma relevant to post",
+                ageLimit: "18 - 34 Years",
+                totalPosts: "51 Vacancies",
+                importantDates: "Notification Active",
+                selectionProcess: "Written Exam + Document Verification",
+                officialUrl: "https://ssc.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 112,
+                postName: "Clerk",
+                department: "Government Department 112",
+                sector: "Government",
+                qualification: "Graduate / Diploma relevant to post",
+                ageLimit: "18 - 27 Years",
+                totalPosts: "52 Vacancies",
+                importantDates: "Notification Active",
+                selectionProcess: "Written Exam + Document Verification",
+                officialUrl: "https://ssc.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 113,
+                postName: "Stenographer",
+                department: "Government Department 113",
+                sector: "Government",
+                qualification: "Graduate / Diploma relevant to post",
+                ageLimit: "18 - 28 Years",
+                totalPosts: "53 Vacancies",
+                importantDates: "Notification Active",
+                selectionProcess: "Written Exam + Document Verification",
+                officialUrl: "https://ssc.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 114,
+                postName: "Assistant",
+                department: "Government Department 114",
+                sector: "Government",
+                qualification: "Graduate / Diploma relevant to post",
+                ageLimit: "18 - 29 Years",
+                totalPosts: "54 Vacancies",
+                importantDates: "Notification Active",
+                selectionProcess: "Written Exam + Document Verification",
+                officialUrl: "https://ssc.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 115,
+                postName: "Inspector",
+                department: "Government Department 115",
+                sector: "Government",
+                qualification: "Graduate / Diploma relevant to post",
+                ageLimit: "18 - 30 Years",
+                totalPosts: "55 Vacancies",
+                importantDates: "Notification Active",
+                selectionProcess: "Written Exam + Document Verification",
+                officialUrl: "https://ssc.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 116,
+                postName: "Data Entry Operator",
+                department: "Government Department 116",
+                sector: "Government",
+                qualification: "Graduate / Diploma relevant to post",
+                ageLimit: "18 - 31 Years",
+                totalPosts: "56 Vacancies",
+                importantDates: "Notification Active",
+                selectionProcess: "Written Exam + Document Verification",
+                officialUrl: "https://ssc.gov.in"
+            ,
+                expectedSalary: "₹25,500 - ₹81,100/month"
+            },
+{
+                id: 117,
+                postName: "Accountant",
+                department: "Government Department 117",
+                sector: "Government",
+                qualification: "Graduate / Diploma relevant to post",
+                ageLimit: "18 - 32 Years",
+                totalPosts: "57 Vacancies",
+                importantDates: "Notification Active",
+                selectionProcess: "Written Exam + Document Verification",
+                officialUrl: "https://ssc.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 118,
+                postName: "Surveyor",
+                department: "Government Department 118",
+                sector: "Government",
+                qualification: "Graduate / Diploma relevant to post",
+                ageLimit: "18 - 33 Years",
+                totalPosts: "58 Vacancies",
+                importantDates: "Notification Active",
+                selectionProcess: "Written Exam + Document Verification",
+                officialUrl: "https://ssc.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 119,
+                postName: "Operator",
+                department: "Government Department 119",
+                sector: "Government",
+                qualification: "Graduate / Diploma relevant to post",
+                ageLimit: "18 - 34 Years",
+                totalPosts: "59 Vacancies",
+                importantDates: "Notification Active",
+                selectionProcess: "Written Exam + Document Verification",
+                officialUrl: "https://ssc.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 120,
+                postName: "Junior Engineer",
+                department: "Municipal Corporation Department 120",
+                sector: "MCD",
+                qualification: "Diploma / Degree as applicable",
+                ageLimit: "18 - 29 Years",
+                totalPosts: "30 Vacancies",
+                importantDates: "MCD Recruitment Notice",
+                selectionProcess: "CBT + Interview",
+                officialUrl: "https://mcdonline.nic.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 121,
+                postName: "Assistant Engineer",
+                department: "Municipal Corporation Department 121",
+                sector: "MCD",
+                qualification: "Diploma / Degree as applicable",
+                ageLimit: "18 - 30 Years",
+                totalPosts: "31 Vacancies",
+                importantDates: "MCD Recruitment Notice",
+                selectionProcess: "CBT + Interview",
+                officialUrl: "https://mcdonline.nic.in"
+            ,
+                expectedSalary: "₹44,900 - ₹1,42,400/month"
+            },
+{
+                id: 122,
+                postName: "Clerk",
+                department: "Municipal Corporation Department 122",
+                sector: "MCD",
+                qualification: "Diploma / Degree as applicable",
+                ageLimit: "18 - 31 Years",
+                totalPosts: "32 Vacancies",
+                importantDates: "MCD Recruitment Notice",
+                selectionProcess: "CBT + Interview",
+                officialUrl: "https://mcdonline.nic.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 123,
+                postName: "Data Entry Operator",
+                department: "Municipal Corporation Department 123",
+                sector: "MCD",
+                qualification: "Diploma / Degree as applicable",
+                ageLimit: "18 - 32 Years",
+                totalPosts: "33 Vacancies",
+                importantDates: "MCD Recruitment Notice",
+                selectionProcess: "CBT + Interview",
+                officialUrl: "https://mcdonline.nic.in"
+            ,
+                expectedSalary: "₹25,500 - ₹81,100/month"
+            },
+{
+                id: 124,
+                postName: "Staff Nurse",
+                department: "Municipal Corporation Department 124",
+                sector: "MCD",
+                qualification: "Diploma / Degree as applicable",
+                ageLimit: "18 - 33 Years",
+                totalPosts: "34 Vacancies",
+                importantDates: "MCD Recruitment Notice",
+                selectionProcess: "CBT + Interview",
+                officialUrl: "https://mcdonline.nic.in"
+            ,
+                expectedSalary: "₹44,900 - ₹1,42,400/month"
+            },
+{
+                id: 125,
+                postName: "Accountant",
+                department: "Municipal Corporation Department 125",
+                sector: "MCD",
+                qualification: "Diploma / Degree as applicable",
+                ageLimit: "18 - 34 Years",
+                totalPosts: "35 Vacancies",
+                importantDates: "MCD Recruitment Notice",
+                selectionProcess: "CBT + Interview",
+                officialUrl: "https://mcdonline.nic.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 126,
+                postName: "Inspector",
+                department: "Municipal Corporation Department 126",
+                sector: "MCD",
+                qualification: "Diploma / Degree as applicable",
+                ageLimit: "18 - 28 Years",
+                totalPosts: "36 Vacancies",
+                importantDates: "MCD Recruitment Notice",
+                selectionProcess: "CBT + Interview",
+                officialUrl: "https://mcdonline.nic.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 127,
+                postName: "Supervisor",
+                department: "Municipal Corporation Department 127",
+                sector: "MCD",
+                qualification: "Diploma / Degree as applicable",
+                ageLimit: "18 - 29 Years",
+                totalPosts: "37 Vacancies",
+                importantDates: "MCD Recruitment Notice",
+                selectionProcess: "CBT + Interview",
+                officialUrl: "https://mcdonline.nic.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 128,
+                postName: "Architect",
+                department: "Municipal Corporation Department 128",
+                sector: "MCD",
+                qualification: "Diploma / Degree as applicable",
+                ageLimit: "18 - 30 Years",
+                totalPosts: "38 Vacancies",
+                importantDates: "MCD Recruitment Notice",
+                selectionProcess: "CBT + Interview",
+                officialUrl: "https://mcdonline.nic.in"
+            ,
+                expectedSalary: "₹56,100 - ₹1,77,500/month"
+            },
+{
+                id: 129,
+                postName: "Technician",
+                department: "Municipal Corporation Department 129",
+                sector: "MCD",
+                qualification: "Diploma / Degree as applicable",
+                ageLimit: "18 - 31 Years",
+                totalPosts: "39 Vacancies",
+                importantDates: "MCD Recruitment Notice",
+                selectionProcess: "CBT + Interview",
+                officialUrl: "https://mcdonline.nic.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 130,
+                postName: "Sanitation Officer",
+                department: "Municipal Corporation Department 130",
+                sector: "MCD",
+                qualification: "Diploma / Degree as applicable",
+                ageLimit: "18 - 32 Years",
+                totalPosts: "40 Vacancies",
+                importantDates: "MCD Recruitment Notice",
+                selectionProcess: "CBT + Interview",
+                officialUrl: "https://mcdonline.nic.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 131,
+                postName: "Horticulture Assistant",
+                department: "Municipal Corporation Department 131",
+                sector: "MCD",
+                qualification: "Diploma / Degree as applicable",
+                ageLimit: "18 - 33 Years",
+                totalPosts: "41 Vacancies",
+                importantDates: "MCD Recruitment Notice",
+                selectionProcess: "CBT + Interview",
+                officialUrl: "https://mcdonline.nic.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 132,
+                postName: "Planning Assistant",
+                department: "Municipal Corporation Department 132",
+                sector: "MCD",
+                qualification: "Diploma / Degree as applicable",
+                ageLimit: "18 - 34 Years",
+                totalPosts: "42 Vacancies",
+                importantDates: "MCD Recruitment Notice",
+                selectionProcess: "CBT + Interview",
+                officialUrl: "https://mcdonline.nic.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 133,
+                postName: "Office Assistant",
+                department: "Municipal Corporation Department 133",
+                sector: "MCD",
+                qualification: "Diploma / Degree as applicable",
+                ageLimit: "18 - 28 Years",
+                totalPosts: "43 Vacancies",
+                importantDates: "MCD Recruitment Notice",
+                selectionProcess: "CBT + Interview",
+                officialUrl: "https://mcdonline.nic.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 134,
+                postName: "Manager",
+                department: "Municipal Corporation Department 134",
+                sector: "MCD",
+                qualification: "Diploma / Degree as applicable",
+                ageLimit: "18 - 29 Years",
+                totalPosts: "44 Vacancies",
+                importantDates: "MCD Recruitment Notice",
+                selectionProcess: "CBT + Interview",
+                officialUrl: "https://mcdonline.nic.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 135,
+                postName: "Survey Assistant",
+                department: "Municipal Corporation Department 135",
+                sector: "MCD",
+                qualification: "Diploma / Degree as applicable",
+                ageLimit: "18 - 30 Years",
+                totalPosts: "45 Vacancies",
+                importantDates: "MCD Recruitment Notice",
+                selectionProcess: "CBT + Interview",
+                officialUrl: "https://mcdonline.nic.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 136,
+                postName: "Electrical Technician",
+                department: "Municipal Corporation Department 136",
+                sector: "MCD",
+                qualification: "Diploma / Degree as applicable",
+                ageLimit: "18 - 31 Years",
+                totalPosts: "46 Vacancies",
+                importantDates: "MCD Recruitment Notice",
+                selectionProcess: "CBT + Interview",
+                officialUrl: "https://mcdonline.nic.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 137,
+                postName: "Civil Supervisor",
+                department: "Municipal Corporation Department 137",
+                sector: "MCD",
+                qualification: "Diploma / Degree as applicable",
+                ageLimit: "18 - 32 Years",
+                totalPosts: "47 Vacancies",
+                importantDates: "MCD Recruitment Notice",
+                selectionProcess: "CBT + Interview",
+                officialUrl: "https://mcdonline.nic.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 138,
+                postName: "Health Inspector",
+                department: "Municipal Corporation Department 138",
+                sector: "MCD",
+                qualification: "Diploma / Degree as applicable",
+                ageLimit: "18 - 33 Years",
+                totalPosts: "48 Vacancies",
+                importantDates: "MCD Recruitment Notice",
+                selectionProcess: "CBT + Interview",
+                officialUrl: "https://mcdonline.nic.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 139,
+                postName: "Assistant Manager",
+                department: "Municipal Corporation Department 139",
+                sector: "MCD",
+                qualification: "Diploma / Degree as applicable",
+                ageLimit: "18 - 34 Years",
+                totalPosts: "49 Vacancies",
+                importantDates: "MCD Recruitment Notice",
+                selectionProcess: "CBT + Interview",
+                officialUrl: "https://mcdonline.nic.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 140,
+                postName: "Software Engineer",
+                department: "Tech Company Hiring Drive",
+                sector: "Private",
+                qualification: "B.Tech / BCA / MCA / Relevant Skills",
+                ageLimit: "Open Requirement",
+                totalPosts: "Multiple Openings",
+                importantDates: "Ongoing Hiring",
+                selectionProcess: "Aptitude + Technical Interview",
+                officialUrl: "https://www.ncs.gov.in"
+            ,
+                expectedSalary: "₹6 - ₹12 LPA"
+            },
+{
+                id: 141,
+                postName: "Frontend Developer",
+                department: "Tech Company Hiring Drive",
+                sector: "Private",
+                qualification: "B.Tech / BCA / MCA / Relevant Skills",
+                ageLimit: "Open Requirement",
+                totalPosts: "Multiple Openings",
+                importantDates: "Ongoing Hiring",
+                selectionProcess: "Aptitude + Technical Interview",
+                officialUrl: "https://www.ncs.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 142,
+                postName: "Backend Developer",
+                department: "Tech Company Hiring Drive",
+                sector: "Private",
+                qualification: "B.Tech / BCA / MCA / Relevant Skills",
+                ageLimit: "Open Requirement",
+                totalPosts: "Multiple Openings",
+                importantDates: "Ongoing Hiring",
+                selectionProcess: "Aptitude + Technical Interview",
+                officialUrl: "https://www.ncs.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 143,
+                postName: "Full Stack Developer",
+                department: "Tech Company Hiring Drive",
+                sector: "Private",
+                qualification: "B.Tech / BCA / MCA / Relevant Skills",
+                ageLimit: "Open Requirement",
+                totalPosts: "Multiple Openings",
+                importantDates: "Ongoing Hiring",
+                selectionProcess: "Aptitude + Technical Interview",
+                officialUrl: "https://www.ncs.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 144,
+                postName: "AI Engineer",
+                department: "Tech Company Hiring Drive",
+                sector: "Private",
+                qualification: "B.Tech / BCA / MCA / Relevant Skills",
+                ageLimit: "Open Requirement",
+                totalPosts: "Multiple Openings",
+                importantDates: "Ongoing Hiring",
+                selectionProcess: "Aptitude + Technical Interview",
+                officialUrl: "https://www.ncs.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 145,
+                postName: "Data Analyst",
+                department: "Tech Company Hiring Drive",
+                sector: "Private",
+                qualification: "B.Tech / BCA / MCA / Relevant Skills",
+                ageLimit: "Open Requirement",
+                totalPosts: "Multiple Openings",
+                importantDates: "Ongoing Hiring",
+                selectionProcess: "Aptitude + Technical Interview",
+                officialUrl: "https://www.ncs.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 146,
+                postName: "Data Scientist",
+                department: "Tech Company Hiring Drive",
+                sector: "Private",
+                qualification: "B.Tech / BCA / MCA / Relevant Skills",
+                ageLimit: "Open Requirement",
+                totalPosts: "Multiple Openings",
+                importantDates: "Ongoing Hiring",
+                selectionProcess: "Aptitude + Technical Interview",
+                officialUrl: "https://www.ncs.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 147,
+                postName: "DevOps Engineer",
+                department: "Tech Company Hiring Drive",
+                sector: "Private",
+                qualification: "B.Tech / BCA / MCA / Relevant Skills",
+                ageLimit: "Open Requirement",
+                totalPosts: "Multiple Openings",
+                importantDates: "Ongoing Hiring",
+                selectionProcess: "Aptitude + Technical Interview",
+                officialUrl: "https://www.ncs.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 148,
+                postName: "QA Engineer",
+                department: "Tech Company Hiring Drive",
+                sector: "Private",
+                qualification: "B.Tech / BCA / MCA / Relevant Skills",
+                ageLimit: "Open Requirement",
+                totalPosts: "Multiple Openings",
+                importantDates: "Ongoing Hiring",
+                selectionProcess: "Aptitude + Technical Interview",
+                officialUrl: "https://www.ncs.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 149,
+                postName: "Cloud Engineer",
+                department: "Tech Company Hiring Drive",
+                sector: "Private",
+                qualification: "B.Tech / BCA / MCA / Relevant Skills",
+                ageLimit: "Open Requirement",
+                totalPosts: "Multiple Openings",
+                importantDates: "Ongoing Hiring",
+                selectionProcess: "Aptitude + Technical Interview",
+                officialUrl: "https://www.ncs.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 150,
+                postName: "Cyber Security Analyst",
+                department: "Tech Company Hiring Drive",
+                sector: "Private",
+                qualification: "B.Tech / BCA / MCA / Relevant Skills",
+                ageLimit: "Open Requirement",
+                totalPosts: "Multiple Openings",
+                importantDates: "Ongoing Hiring",
+                selectionProcess: "Aptitude + Technical Interview",
+                officialUrl: "https://www.ncs.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 151,
+                postName: "UI UX Designer",
+                department: "Tech Company Hiring Drive",
+                sector: "Private",
+                qualification: "B.Tech / BCA / MCA / Relevant Skills",
+                ageLimit: "Open Requirement",
+                totalPosts: "Multiple Openings",
+                importantDates: "Ongoing Hiring",
+                selectionProcess: "Aptitude + Technical Interview",
+                officialUrl: "https://www.ncs.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 152,
+                postName: "Product Analyst",
+                department: "Tech Company Hiring Drive",
+                sector: "Private",
+                qualification: "B.Tech / BCA / MCA / Relevant Skills",
+                ageLimit: "Open Requirement",
+                totalPosts: "Multiple Openings",
+                importantDates: "Ongoing Hiring",
+                selectionProcess: "Aptitude + Technical Interview",
+                officialUrl: "https://www.ncs.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 153,
+                postName: "Business Analyst",
+                department: "Tech Company Hiring Drive",
+                sector: "Private",
+                qualification: "B.Tech / BCA / MCA / Relevant Skills",
+                ageLimit: "Open Requirement",
+                totalPosts: "Multiple Openings",
+                importantDates: "Ongoing Hiring",
+                selectionProcess: "Aptitude + Technical Interview",
+                officialUrl: "https://www.ncs.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 154,
+                postName: "Support Engineer",
+                department: "Tech Company Hiring Drive",
+                sector: "Private",
+                qualification: "B.Tech / BCA / MCA / Relevant Skills",
+                ageLimit: "Open Requirement",
+                totalPosts: "Multiple Openings",
+                importantDates: "Ongoing Hiring",
+                selectionProcess: "Aptitude + Technical Interview",
+                officialUrl: "https://www.ncs.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 155,
+                postName: "ML Engineer",
+                department: "Tech Company Hiring Drive",
+                sector: "Private",
+                qualification: "B.Tech / BCA / MCA / Relevant Skills",
+                ageLimit: "Open Requirement",
+                totalPosts: "Multiple Openings",
+                importantDates: "Ongoing Hiring",
+                selectionProcess: "Aptitude + Technical Interview",
+                officialUrl: "https://www.ncs.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 156,
+                postName: "React Developer",
+                department: "Tech Company Hiring Drive",
+                sector: "Private",
+                qualification: "B.Tech / BCA / MCA / Relevant Skills",
+                ageLimit: "Open Requirement",
+                totalPosts: "Multiple Openings",
+                importantDates: "Ongoing Hiring",
+                selectionProcess: "Aptitude + Technical Interview",
+                officialUrl: "https://www.ncs.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 157,
+                postName: "Node.js Developer",
+                department: "Tech Company Hiring Drive",
+                sector: "Private",
+                qualification: "B.Tech / BCA / MCA / Relevant Skills",
+                ageLimit: "Open Requirement",
+                totalPosts: "Multiple Openings",
+                importantDates: "Ongoing Hiring",
+                selectionProcess: "Aptitude + Technical Interview",
+                officialUrl: "https://www.ncs.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 158,
+                postName: "Python Developer",
+                department: "Tech Company Hiring Drive",
+                sector: "Private",
+                qualification: "B.Tech / BCA / MCA / Relevant Skills",
+                ageLimit: "Open Requirement",
+                totalPosts: "Multiple Openings",
+                importantDates: "Ongoing Hiring",
+                selectionProcess: "Aptitude + Technical Interview",
+                officialUrl: "https://www.ncs.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            },
+{
+                id: 159,
+                postName: "SDE Intern",
+                department: "Tech Company Hiring Drive",
+                sector: "Private",
+                qualification: "B.Tech / BCA / MCA / Relevant Skills",
+                ageLimit: "Open Requirement",
+                totalPosts: "Multiple Openings",
+                importantDates: "Ongoing Hiring",
+                selectionProcess: "Aptitude + Technical Interview",
+                officialUrl: "https://www.ncs.gov.in"
+            ,
+                expectedSalary: "₹25,000 - ₹60,000/month"
+            }
+        ];
+
+
+
+        let selectedSector = "All";
+
+
+
+        function renderInformationDesk() {
+
+            const grid = document.getElementById("infoGrid");
+
+            const counterBox = document.getElementById("counterBox");
+
+            const query = document.getElementById("jobSearch").value.toLowerCase();
+
+            grid.innerHTML = "";
+
+
+
+            const filteredData = informationalDatabase.filter(info => {
+
+                const sectorMatch = (selectedSector === "All" || info.sector === selectedSector);
+
+                const textMatch = info.postName.toLowerCase().includes(query) || 
+
+                                  info.department.toLowerCase().includes(query) || 
+
+                                  info.qualification.toLowerCase().includes(query);
+
+                return sectorMatch && textMatch;
+
+            });
+
+
+
+            counterBox.innerText = `Showing ${filteredData.length} notices on board`;
+
+
+
+            if(filteredData.length === 0) {
+
+                grid.innerHTML = `
+
+                    <div class="col-span-full bg-white border border-dashed border-slate-300 rounded-2xl p-16 text-center text-slate-400 font-semibold">
+
+                        No official informational post matches this criteria.
+
+                    </div>
+
+                `;
+
+                return;
+
+            }
+
+
+
+            filteredData.forEach(info => {
+
+                let badgeColor = "bg-purple-50 text-purple-700 border-purple-200/60";
+
+                if(info.sector === 'Government') badgeColor = "bg-emerald-50 text-emerald-700 border-emerald-200/60";
+
+                if(info.sector === 'MCD') badgeColor = "bg-amber-50 text-amber-700 border-amber-200/60";
+
+
+
+                // Clean URL string for visual display on the button
+
+                const displayUrl = info.officialUrl.replace('https://', '').replace('www.', '');
+
+
+
+                const cardHTML = `
+
+                    <div class="premium-card bg-white border border-slate-200/80 rounded-2xl p-6 shadow-sm flex flex-col justify-between relative overflow-hidden">
+
+                        <div>
+
+                            <div class="flex items-center justify-between gap-4 mb-4">
+
+                                <span class="text-[11px] uppercase tracking-wider font-extrabold border px-3 py-1 rounded-full ${badgeColor}">
+
+                                    ${info.sector} Sector
+
+                                </span>
+
+                                <div class="flex items-center gap-1.5 text-xs font-bold text-slate-400 bg-slate-50 px-2.5 py-1 rounded-md border border-slate-100">
+
+                                    ${info.totalPosts}
+
+                                </div>
+
+                            </div>
+
+
+
+                            <h2 class="text-xl font-bold text-slate-900 tracking-tight leading-snug mb-1">${info.postName}</h2>
+
+                            <p class="text-xs font-semibold text-indigo-600 tracking-wide uppercase mb-5">${info.department}</p>
+
+
+
+                            <div class="border border-slate-100 rounded-xl overflow-hidden divide-y divide-slate-100 text-xs">
+
+                                <div class="p-3.5 bg-slate-50/50 grid grid-cols-3 gap-2">
+
+                                    <span class="text-slate-400 font-semibold tracking-wide">Eligibility</span>
+
+                                    <span class="col-span-2 text-slate-800 font-bold leading-relaxed">${info.qualification}</span>
+
+                                </div>
+
+                                <div class="p-3.5 grid grid-cols-3 gap-2">
+
+                                    <span class="text-slate-400 font-semibold tracking-wide">Age Window</span>
+
+                                    <span class="col-span-2 text-slate-700 font-medium">${info.ageLimit}</span>
+
+                                </div>
+                                <div class="p-3.5 bg-slate-50/50 grid grid-cols-3 gap-2">
+                                    <span class="text-slate-400 font-semibold tracking-wide">Expected Salary</span>
+                                    <span class="col-span-2 text-emerald-700 font-bold">${info.expectedSalary || 'Salary as per norms'}</span>
+                                </div>
+
+                                <div class="p-3.5 bg-slate-50/50 grid grid-cols-3 gap-2">
+
+                                    <span class="text-slate-400 font-semibold tracking-wide">Selection Route</span>
+
+                                    <span class="col-span-2 text-slate-700 font-medium">${info.selectionProcess}</span>
+
+                                </div>
+
+                                <div class="p-3.5 grid grid-cols-3 gap-2">
+
+                                    <span class="text-slate-400 font-semibold tracking-wide">Reference Info</span>
+
+                                    <span class="col-span-2 text-amber-700 font-bold">${info.importantDates}</span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
+
+                            <span class="text-slate-400 font-medium flex items-center gap-1">
+
+                                🔗 Verified Source:
+
+                            </span>
+
+                            <a href="${info.officialUrl}" target="_blank" class="font-extrabold text-indigo-600 bg-indigo-50 hover:bg-indigo-100 px-3 py-2 rounded-xl border border-indigo-100 transition-all flex items-center gap-1.5 shadow-sm">
+
+                                Visit ${displayUrl}
+
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                `;
+
+                grid.innerHTML += cardHTML;
+
+            });
+
+        }
+
+
+
+        function filterSector(sector) {
+
+            selectedSector = sector;
+
+            const tabs = document.querySelectorAll(".sector-tab");
+
+            
+
+            tabs.forEach(tab => {
+
+                if(tab.innerText.includes(sector) || (sector === 'All' && tab.innerText === 'All Sectors')) {
+
+                    tab.className = "sector-tab px-5 py-2.5 text-xs font-extrabold rounded-lg bg-white text-indigo-600 shadow-sm transition-all duration-200";
+
+                } else {
+
+                    tab.className = "sector-tab px-5 py-2.5 text-xs font-extrabold rounded-lg text-slate-600 hover:text-slate-900 transition-all duration-200";
+
+                }
+
+            });
+
+            renderInformationDesk();
+
+        }
+
+
+
+        function searchJobs() {
+
+            renderInformationDesk();
+
+        }
+
+
+
+        renderInformationDesk();
+
+    </script>
+
+</body>
+
+</html>
