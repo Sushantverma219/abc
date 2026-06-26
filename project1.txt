@@ -1,0 +1,30 @@
+IBHWSS
+                      fake news headline generato
+
+import random
+
+s1 =[
+    "",
+    "",
+]
+.
+
+.
+.
+.
+.
+.
+
+while loop 
+
+s1 = random.choice(s1)
+
+
+headline = f" {s1} + .  . ."
+
+print(headline)
+
+user_input = y/n
+if user_input == n :
+break
+
